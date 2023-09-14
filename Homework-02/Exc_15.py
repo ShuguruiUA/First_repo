@@ -2,74 +2,42 @@ result = None
 operand = None
 operator = None
 wait_for_number = True
+operator_result = 0
+operand_result = 0
 
 while True:
-
-    char = input("Type a number, or '=' for result: ")
     result = 0
+    user_input = input(">>>")
     
-    if char == "=":
-       print(f"Calculation result is: {result}")
-       break
-
-    elif wait_for_number:
-    
+    if user_input == "=":
+        print(f"result: {result}")
+        break
+    elif user_input != "=":
         try:
-            operand = char
+            result += operator_result
+            operand = user_input
             operand = int(operand) if operand.isdigit() else float(operand)
-            print(f"operand is: {operand}, operand type is: {type(operand)}")
-            # if operand.isdigit():
-            #     operand = int(operand)
-            # else:
-            #     operand = float(operand)
+            operand_result=result
+            print("You are in the operand mode")
         except ValueError:
-            print(f"{operand} is not a number. Try again...")
-        wait_for_number = False
-    else:
-        char = input("Chose operator: '+' or '-' or '/' or '*':")
-        if char not in ('+','-','/','*'):
-            print(f"{char} is not a '+' or '-' or '/' or '*'. Try again...")
-            continue
-        operator = char
-        if operator == "+":
-            result += operand
-            wait_for_number = True
-        elif operator == "-":
-            result -= operand
-            wait_for_number = True
-        elif operator == "*":
-            result *= operand
-            wait_for_number = True
-        else:
-            if operand == 0:
-                print(f"Devision by {operand} is not allowed")
-                continue
-            result /= operand
-            wait_for_number = True
+            print(f"{operand} is not a number. Try again")
         
-    
-    # operator = input("Please input operator")
-    # try:
-    #     if operator not in ("+","-","/","*"):
-    #         if operator == "+":
-    #             result += operand
-    #             print(f"operator is {operator}")
-    #         elif operator == "-":
-    #             result -= operand
-    #             print(f"operator is {operator}")
-    #         elif operator == "*":
-    #             result *= operand
-    #             print(f"operator is {operator}")
-    #          elif operator == "/":
-    #             if operand == 0:
-    #                 print("Devision by zero is not allowed")
-    #                 continue
-    #             result /= operand
-    #             print(f"operator is {operator}")
-    #         else:
-    #             continue          
-    #         print(result)
-    # except:
-    #     print(f"{operator} is not a '+' or '-' or '/' or '*'. Try again...")
-                
-       
+    else:
+        if user_input == "+":
+            operator_result = operand_result
+            operator_result += operand
+        elif user_input == "-":
+            operator_result = operand_result
+            operator_result -= operand
+        elif user_input == "*":
+            operator_result = operand_result
+            operator_result *= operand
+        elif user_input == "/":
+            try:
+                if operand == "0":
+                    continue
+            except ZeroDivisionError:
+                print(f"Devision by {operand} is not allowed")
+        print("you are in the operator mode")
+
+        
