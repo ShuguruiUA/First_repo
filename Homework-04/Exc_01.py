@@ -1,13 +1,17 @@
+
+
 def amount_payment(payment):
+
     sum = 0
-    payment = [1, -3, 4]
     for value in payment:
-        if payment[value] > 0:
-            sum += value
-            i += 1
-        else:
+        if value < 0:
             continue
+        else:
+            sum = sum + value
     return sum
 
 
-print(amount_payment())
+numbers = [1, 2]
+print(numbers)
+numbers.append(3)
+print(numbers)
