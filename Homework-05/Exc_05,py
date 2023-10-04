@@ -18,9 +18,22 @@ list_phones = ["    +38(050)123-32-34", "     0503451234", "(050)8889900", "3805
 
 def get_phone_numbers_for_countries(list_phones):
     new_list_phones = []
+    new_dict_phones = {}
     for phone in list_phones:
         new_list_phones.append(sanitize_phone_number(phone))
-    return new_list_phones
+    for key, value in new_list_phones:
+        if phone[:2] == '81':
+            new_dict_phones.update({'JP': [value]})
+        elif phone[:2] == '65':
+            new_dict_phones.update({'SG': [value]})
+        elif phone[:2] == '88':
+            new_dict_phones.update({'TW': [value]})
+        else:
+            new_dict_phones.update({'UA': [value]})
+
+    return new_dict_phones
+
+
 
 
 print(get_phone_numbers_for_countries(list_phones))
