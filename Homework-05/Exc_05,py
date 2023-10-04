@@ -1,0 +1,26 @@
+
+
+
+def sanitize_phone_number(phone):
+    new_phone = (
+        phone.strip()
+        .removeprefix("+")
+        .replace("(", "")
+        .replace(")", "")
+        .replace("-", "")
+        .replace(" ", "")
+    )
+    return new_phone
+
+#country_code_dict = {"JP": "+81", "SG": "+65", "TW:": "+886", "UA": "+380"}
+
+list_phones = ["    +38(050)123-32-34", "     0503451234", "(050)8889900", "38050-111-22-22", "38050 111 22 11   "]
+
+def get_phone_numbers_for_countries(list_phones):
+    new_list_phones = []
+    for phone in list_phones:
+        new_list_phones.append(sanitize_phone_number(phone))
+    return new_list_phones
+
+
+print(get_phone_numbers_for_countries(list_phones))
