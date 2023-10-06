@@ -17,3 +17,5 @@ print(string[first_index:second_index])
 
 print(result.group())
 
+text = result.string
+print(text)
