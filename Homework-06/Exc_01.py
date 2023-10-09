@@ -1,1 +1,1 @@
-fh = open(test.txt)
+fh = open(|test.txt)
