@@ -2,14 +2,20 @@ import re
 fh = open('test.txt','r')
 while True:
     line = fh.readline()
-    sal_sum = 0
-    if not line:
-        break
-    result = re.search(r'\d{1,6}+', line)
-    #print(result)
-    for num in result:
-        for i in num:
-            sal_sum += num[i]
-            i += 1
-    print (sal_sum)
+    result = 0
+    pattern = r"\d+"
+    salary = re.search(pattern, line)
 
+    if salary != None:
+        sal_sum = float(int(salary.group()))
+        result += sal_sum
+    else:
+        continue
+    
+    fh.close()
+    print(result)
+
+
+
+
+            
