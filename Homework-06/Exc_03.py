@@ -10,16 +10,18 @@ while True:
     else:
         break
 print(result)
+#Варіант функції:
+# import re
 # def read_employees_from_file(path):
 #     result = []
 #     file = open(path,'r')
 #     while True:
-#         line = file.readline()
+#         line = file.readline().replace('\n','')
 #         if line:
 #             result.append(line)
 #         else:
 #             break
+#         print(result)
 #     file.close()
 #     return result
-
-# print(read_employees_from_file(path))
+        
