@@ -1,4 +1,4 @@
-import re
+# import re
 path = ('bd.txt')
 db_list = list()
 db_dict = {
@@ -8,12 +8,27 @@ db_dict = {
 }
 # with open(path) as file:
 file = open(path, 'r')
+new_list = list()
+line = file.readline()
 while True:
-    line = file.readline()
+    line = file.readline().replace('\n', '')
     if line:
-        found_id = re.search(r'\w+{24}', file)
-        print(found_id)
-    file.close()
+        line = line.split(',')
+        db_dict.update({'id': line[0]})
+        db_dict.update({'name': line[1]})
+        db_dict.update({'age': line[2]})
+        db_list.append(db_dict)
+    else:
+        break
+file.close()
+print(db_list)
+
+# while True:
+#     line = file.readline()
+#     if line:
+#         found_id = re.search(r'\w+{24}', file)
+#         print(found_id)
+#     file.close()
 # while True:
 #     line = file.readline()
 #     try:
