@@ -1,4 +1,4 @@
-#import re
+import re
 path = ('em_list.txt')
 result = []
 file = open(path,'r')
@@ -6,7 +6,8 @@ while True:
     line = file.readline()
     if line:
         found = line.replace('\n','')
-        result.append(found)
+        found_1 = re.sub(r'\d+','',line)
+        result.append(found_1)
     else:
         break
 print(result)
