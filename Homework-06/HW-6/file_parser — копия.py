@@ -12,11 +12,8 @@ MKV_VIDEO = []
 DOC_DOCUMENTS = []
 DOCX_DOCUMENTS = []
 TXT_DOCUMENTS = []
-XLS_DOCUMENTS = []
 XLSX_DOCUMENTS = []
-PPT_DOCUMENTS = []
 PPTX_DOCUMENTS = []
-PDF_DOCUMENTS = []
 MP3_AUDIO = []
 OGG_AUDIO = []
 WAV_AUDIO = []
@@ -41,11 +38,8 @@ REGISTER_EXTENSION = {
     'DOC': DOC_DOCUMENTS,
     'DOCX': DOCX_DOCUMENTS,
     'TXT': TXT_DOCUMENTS,
-    'XLS': XLS_DOCUMENTS,
-    'XLSX': XLSX_DOCUMENTS,
-    'PPT': PPT_DOCUMENTS,
+    'XSLX': XLSX_DOCUMENTS,
     'PPTX': PPTX_DOCUMENTS,
-    'PDF': PDF_DOCUMENTS,
     'MP3': MP3_AUDIO,
     'OGG': OGG_AUDIO,
     'WAV': WAV_AUDIO,
@@ -105,11 +99,8 @@ if __name__ == '__main__':
     print(f'Document doc: {DOC_DOCUMENTS}')
     print(f'Document docx: {DOCX_DOCUMENTS}')
     print(f'Document txt: {TXT_DOCUMENTS}')
-    print(f'Document xls: {XLS_DOCUMENTS}')
     print(f'Document xlsx: {XLSX_DOCUMENTS}')
-    print(f'Document ppt: {PPT_DOCUMENTS}')
     print(f'Document pptx: {PPTX_DOCUMENTS}')
-    print(f'Document pdf: {PDF_DOCUMENTS}')
 # KNOWN AUDIO FORMATS OUTPUT:
     print(f'Audio mp3: {MP3_AUDIO}')
     print(f'Audio ogg: {OGG_AUDIO}')
