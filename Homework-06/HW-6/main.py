@@ -35,8 +35,8 @@ def main(folder: Path):
     for file in file_parser.MY_OTHER:
         handle_media(file, folder / 'MY_OTHER')
 
-    for file in file_parser.ARCHIVES:
-        handle_archive(file, folder / 'ARCHIVES')
+    for file in file_parser.ZIP_ARCHIVES:
+        handle_archive(file, folder / 'ZIP_ARCHIVES')
 
     for folder in file_parser.FOLDERS[::-1]:
         # Видаляємо пусті папки після сортування
