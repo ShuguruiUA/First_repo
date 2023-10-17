@@ -53,15 +53,9 @@ def main(folder: Path):
     for file in file_parser.DOCX_DOCUMENTS:
         handle_media(file, folder / 'documents' / 'DOCX')
     for file in file_parser.XLSX_DOCUMENTS:
-        handle_media(file, folder / 'documents' / 'XLSX')
-    for file in file_parser.XLS_DOCUMENTS:
-        handle_media(file, folder / 'documents' / 'XLS')
-    for file in file_parser.PPT_DOCUMENTS:
-        handle_media(file, folder / 'documents' / 'PPT')
+        handle_media(file, folder / 'documents' / 'XSLX')
     for file in file_parser.PPTX_DOCUMENTS:
         handle_media(file, folder / 'documents' / 'PPTX')
-    for file in file_parser.PDF_DOCUMENTS:
-        handle_media(file, folder / 'documents' / 'PDF')
     # AUDIO:
     for file in file_parser.MP3_AUDIO:
         handle_media(file, folder / 'audio' / 'MP3')
