@@ -1,42 +1,54 @@
-
-
-# s = "abc"
-# 
-# if s not in pattern:
-#     pass
-# else:
-#     print(s)
-
-
-
 import re
-def is_integer(s):
-    pattern = r'[a-zA-Z.,?!@#$%^&*()\]\[\\\|/{}]'
-    #pattern_2 = r'\b[+-]'
-    if len(s) == 0:
-        return False
-    try: 
-        s = int(s)
-        print(type(s))
-        return s
-    except TypeError:
-        if s.find('+',0,1) or s.find('-',0,1):
-            return f's is {s}'
+s = "+13"
+a = "aasd"
+pattern_one = r'\D'
+b = re.findall(pattern_one, a)
+print(a)
+print(b)
+for ch in a:
+    if 
+
+#     print(True)
+# print(False)
+
+# if len(a) == 0:
+#     print(False)
+# if len(a) > 0 and a not in pattern_one:
+#     print(True)
+# else:
+#     print(False)
 
 
+# import re
+# pattern = r'[a-zA-Z.,?!@#$%^&*()\]\[\\\|/{}]'
+# pattern_2 = r'\b[+-]'
 
 
-    # if s not in pattern:
-    #     print(f's = {s} and not a digit')
-    # if s.find('+',0,1) or s.find('-',0,1):
-    #     return f's is {s}'
-    # else:
-    #     return False
-    
-is_integer('+13a')
+# def is_integer(s):
 
-st = int('+13')
-print(st)
+#     if len(s) == 0:
+#         print(s)
+#         return False
+
+
+# is_integer('13')
+
+# s = '+13a'
+# numbers = re.findall(r'[+-]?\d+', s)
+# if len(numbers) == len(s):
+#     print(s, numbers)
+# print(s)
+# if s not in pattern:
+#     print(f's = {s} and not a digit')
+# if s.find('+',0,1) or s.find('-',0,1):
+#     return f's is {s}'
+# else:
+#     return False
+
+# is_integer('+13a')
+
+# st = int('+13')
+# print(st)
 # from setuptools import setup
 # args_dict = {
 #     "name": "useful",
@@ -81,6 +93,6 @@ print(st)
 #           entry_points = entry_points
 #           )
 #     print(entry_points)
-       
 
-#print(do_setup(args_dict, requires, entry_points))
+
+# print(do_setup(args_dict, requires, entry_points))
