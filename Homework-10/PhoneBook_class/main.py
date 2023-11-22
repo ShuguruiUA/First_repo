@@ -15,7 +15,7 @@ class Name(Field):
 
 class Phone(Field):
     def validate(self, value):
-        if len(value) < 10 and not value.isdigit(): # put your logic here
+        if len(value) < 10 and value.isdigit() == False: # put your logic here
             raise ValueError('Phone should be 10 symbols')
 
 
@@ -39,7 +39,7 @@ class Record:
                 return phone_number
 
     def edit_phone(self, old_phone, new_phone):
-        
+
         # put your logic here
         pass
 
