@@ -1,0 +1,34 @@
+class Field:
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return str(self.value)
+    
+class Name(Field):
+    pass
+
+class Phone(Field):
+    def validate(self, value):
+        if len(value) < 10 and value.isdigit() == False: # put your logic here
+            raise ValueError('Phone should be 10 symbols')
+
+class Record:
+    def __init__(self, name):
+        self.name = Name(name)
+        self.phones = []
+        
+    def add_phone(self, phone_number: str):
+        phone = Phone(phone_number)
+        phone.validate(phone_number)
+        if phone not in self.phones:
+            self.phones.append(phone)
+
+    def __repr__(self) -> str:
+        return f'{self.name}-{list(self.phones)}'
+
+
+new_cont = Record('test')
+new_cont.add_phone('1234567891')
+
+print(new_cont)
