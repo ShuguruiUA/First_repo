@@ -1,5 +1,6 @@
 from collections import UserDict
 import re
+from datetime import datetime
 
 
 class Field:
@@ -38,6 +39,18 @@ class Record:
     
     def days_to_birthday(self, birthday): #new
         if birthday:
+            current_year_birthday = birthday.replace(year=datetime.now().year)
+            if current_year_birthday == datetime.now():
+                return f'Todays is {self.name} birthday!'
+            elif current_year_birthday > datetime.now():  
+                days_to_birthday = current_year_birthday - datetime.now()
+                return f'Days to birthdat: {days_to_birthday.days}'
+            elif current_year_birthday < datetime.now():
+                next_year_birthday = current_year_birthday.replace(year=current_year_birthday.year + 1)
+                days_to_birthday = next_year_birthday - datetime.now()
+                return f'Days to birthday: {days_to_birthday.days}'
+        else:
+            raise ValueError(f'Birthday for {self.name} is not set')         
             
 
     def add_phone(self, phone_number: str):
